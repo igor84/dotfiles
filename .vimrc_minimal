@@ -1,0 +1,25 @@
+set nocompatible              " be iMproved, required
+
+set statusline=   " Resets statusline settings to vim default
+color ron         " Color theme
+hi StatusLine ctermbg=18 ctermfg=15    " Status line background and foreground colors
+
+set history=50    " How many last commands and serach patters to remember
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching (as you type)
+set laststatus=2  " Always display the status line
+
+set tabstop=4     " These three are needed for proper identation
+set shiftwidth=4
+set shiftround
+
+set relativenumber        " Show line numbers
+set number
+set numberwidth=5
+
+set wildignore+=*.so,*.swp,*.zip,*.meta,*.jar,*.a,*.dll,*.png,*.asset
+set clipboard=unnamed
+set diffopt+=iwhite
+
+map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
