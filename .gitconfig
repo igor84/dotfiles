@@ -1,0 +1,8 @@
+[user]
+	name = Igor Stojkovic
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+[alias]
+	tree = "!git log --graph --decorate --pretty=format:'%C(yellow)%h %Cgreen%cI %C(cyan)%d%Creset %s %Cblue(%an)' --abbrev-commit --all"
