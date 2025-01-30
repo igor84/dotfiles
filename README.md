@@ -1,14 +1,57 @@
 # dotfiles
-Linux dotfiles I use
+Linux dotfiles and scripts I use.
 
-# Requires Vundle
-But if you don't want to use plugins you can use .vimrc_minimal instead.
+# KDE refresh rate on lock screen
+Go to System Settings → Colors & Themes → Login Screen (SDDM) and clicking Apply Plasma Settings…
 
-`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+# Software I need to install
 
-Launch `vim` and run `:PluginInstall`
+- Kate
+- markdownpart
+- DoubleCmd
+- Vivaldi
+    - Bitwarden
+    - SponsorBlock
+    - Default Zoom for Google Workspace
+- NVidia
+- PCloud
+- dotfiles and keyboard layout
+- neovim
+- plexmediaserver
+- qBittorrent
+- timeshift
+- globalprotect / gpclient `sudo pacman -Sy globalprotect-openconnect`
+- viber
+- KRDC (try different acceleration options if there are issues)
+- gitui or lazygit
 
-# KDE refresh rate
-There is a setting in display setting but in order to use it even on lock screen:
-- Add `MaxFPS=100` in .config/kwinrc under Compositing section
-- Add `xrandr --rate 100` to /usr/share/sddm/scripts/Xsetup
+# Reinstall TODO
+- Make sure to keep id_rsa
+- mkdir /media/data/
+    - sudo chown igors:igors data
+    - chown -R igors:igors data
+    - /etc/fstab
+- Add these to .bashrc:
+
+```sh
+alias ll='ls -al --color=auto'
+alias rdp="xfreerdp /u:<username> /v:<remote-hostame> /size:1920x1200"
+```
+
+# Steam shader compilation
+
+1. Enable Background Shader Pre-Caching.
+
+You can find this option if you navigate to Downloads / Shader Pre-Caching and enable both “Enable Shader Pre-Caching" and “Allow background processing of Vulkan shaders.” 
+
+However, to my knowledge, by default, this will only uses a single CPU core or two threads, but it is possible to specify how many CPU threads Steam should should be using for background shader compilation.
+
+2. Change CPU / Threads Used By Steam For Background Shader Compilation
+
+vim .local/share/Steam/steam_dev.cfg
+```
+unShaderBackgroundProcessingThreads 9
+```
+The number representing how many CPU threads, you want Steam to use for background shader compilation. 
+
+3. Restart Steam. 
