@@ -1,10 +1,10 @@
 # dotfiles
 Linux dotfiles and scripts I use.
 
-# KDE refresh rate on lock screen
+## KDE refresh rate on lock screen
 Go to System Settings → Colors & Themes → Login Screen (SDDM) and clicking Apply Plasma Settings…
 
-# Software I need to install
+## Software I need to install
 
 - Kate
 - markdownpart
@@ -25,7 +25,7 @@ Go to System Settings → Colors & Themes → Login Screen (SDDM) and clicking A
 - KRDC (try different acceleration options if there are issues)
 - gitui or lazygit
 
-# Reinstall TODO
+## Reinstall TODO
 - Make sure to keep id_rsa
 - mkdir /media/data/
     - sudo chown igors:igors data
@@ -38,7 +38,15 @@ alias ll='ls -al --color=auto'
 alias rdp="xfreerdp /u:<username> /v:<remote-hostame> /size:1920x1200"
 ```
 
-# Steam shader compilation
+- Edit `/boot/loader/entries/<current_entry>.conf` and add `nowatchdog` to the options line.
+- Edit `/boot/loader/loader.conf` and add line with `timeout 0` to disable 3 second bootup selector screen.
+
+### Other useful info
+
+- Check [awesome-kde](https://github.com/shvedes/awesome-kde) for other KDE software.
+- Run `pacman -Sc` from time to time to clear the cache and free up space.
+
+## Steam shader compilation
 
 1. Enable Background Shader Pre-Caching.
 
